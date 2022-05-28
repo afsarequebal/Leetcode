@@ -31,7 +31,7 @@ class Leetcode581 {
     
     int i = 0; int j = nums.length-1;
 
-    //Finding first and last element where order is reversed
+    //Finding first and last element where order is reversed.
     while (i < j ) {
       if (vals[j] == -1) {
         j--;
