@@ -17,14 +17,6 @@ class UnionFind {
         rank = new int[m * n];
     }
 
-    public int getCount() {
-        return count;
-    }
-    public int incCount(int i, int j, int n) {
-         parent[i * n + j] = i * n + j;
-        return count++;
-    }
-
     // Submerging two groups into one
     //union with rank
     void union(int x, int y) { 
@@ -41,13 +33,22 @@ class UnionFind {
             count--;
         }
     }
-    
-    // finding the parent of an element
-    int find(int i) {//path compression
+     // finding the parent of an element
+    // path compression
+    int find(int i) {
         if(parent[i]!=i) parent[i] = find(parent[i]);
         return parent[i];
     }
 
+    public int getCount() {
+        return count;
+    }
+    
+    public int incCount(int i, int j, int n) {
+         parent[i * n + j] = i * n + j;
+        return count++;
+    }
+    
     public List<Integer> numIslands2(int m, int n, int[][] positions) {
         if(positions.length==0) return new ArrayList<>();
 
