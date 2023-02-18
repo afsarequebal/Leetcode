@@ -48,7 +48,7 @@ class UnionFind {
          parent[i * n + j] = i * n + j;
         return count++;
     }
-    
+  }
     public List<Integer> numIslands2(int m, int n, int[][] positions) {
         if(positions.length==0) return new ArrayList<>();
 
